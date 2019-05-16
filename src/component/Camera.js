@@ -82,7 +82,7 @@ class Camera extends React.Component {
           let facingMode = FACING_MODES.ENVIRONMENT;
           let idealResolution = { width: 640, height: 480 };
           this.startCamera(facingMode, idealResolution);
-        }}> Start environment facingMode resolution ideal 640 by 480 </button>
+        }}> Environment </button>
  
         {/* <button onClick={ () => {
           let facingMode = FACING_MODES.USER;
@@ -91,8 +91,10 @@ class Camera extends React.Component {
  
         <button onClick={ () => {
           let facingMode = FACING_MODES.USER;
-          this.startCameraMaxResolution(facingMode);
-        }}> Start user facingMode resolution maximum </button>
+          let idealResolution = { width: 640, height: 480 };
+          this.startCamera(facingMode, idealResolution);
+        //   this.startCameraMaxResolution(facingMode);
+        }}> Selfie </button>
  
         <button onClick={ () => {
           this.takePhoto();

@@ -68,7 +68,7 @@ class Camera extends React.Component {
     <div className='imageHolder' >
         <div className='filledwithimage'>
             {
-                !video ? takePhoto : video
+                !takePhoto ? video : takePhoto
             }
         </div>
 

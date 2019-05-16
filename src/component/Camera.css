@@ -1,0 +1,16 @@
+.imageHolder{
+    display: flex;
+    background-color: aqua;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+.filledwithimage{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 290px;
+    height: 290px;
+}

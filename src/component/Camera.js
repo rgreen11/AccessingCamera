@@ -1,6 +1,6 @@
 import React from 'react';
-import CameraPhoto, { FACING_MODES, IMAGE_TYPES } from 'jslib-html5-camera-photo';
- 
+import CameraPhoto, { FACING_MODES} from 'jslib-html5-camera-photo';
+import './Camera.css'
 class Camera extends React.Component {
   constructor (props, context) {
     super(props, context);
@@ -19,8 +19,9 @@ class Camera extends React.Component {
   }
  
   startCamera (idealFacingMode, idealResolution) {
-    this.cameraPhoto.startCamera(idealFacingMode.ENVIRONMENT, idealResolution)
-      .then(() => {
+    this.cameraPhoto.startCamera(idealFacingMode, idealResolution)
+      .then((data) => {
+          console.log(data)
         console.log('camera is started !');
       })
       .catch((error) => {
@@ -60,16 +61,26 @@ class Camera extends React.Component {
   render () {
     return (
       <div>
+    <div className='imageHolder' >
+        <div className='filledwithimage'>
+            <img 
+            alt="imgCamera"
+            src={this.state.dataUri}
+            />
+        </div>
+    </div>
+        
+        
         <button onClick={ () => {
           let facingMode = FACING_MODES.ENVIRONMENT;
           let idealResolution = { width: 640, height: 480 };
           this.startCamera(facingMode, idealResolution);
         }}> Start environment facingMode resolution ideal 640 by 480 </button>
  
-        <button onClick={ () => {
+        {/* <button onClick={ () => {
           let facingMode = FACING_MODES.USER;
           this.startCamera(facingMode, {});
-        }}> Start user facingMode resolution default </button>
+        }}> Start user facingMode resolution default </button> */}
  
         <button onClick={ () => {
           let facingMode = FACING_MODES.USER;
@@ -88,10 +99,7 @@ class Camera extends React.Component {
           ref={this.videoRef}
           autoPlay="true"
         />
-        <img
-          alt="imgCamera"
-          src={this.state.dataUri}
-        />
+       
       </div>
     );
   }

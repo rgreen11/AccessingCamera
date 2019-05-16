@@ -90,8 +90,11 @@ class Camera extends React.Component {
         }}> Selfie </button>
  
         <button onClick={ () => {
-          this.takePhoto();
-          this.stopCamera();
+          if(takePhoto()){
+            this.stopCamera();
+          }
+          
+         
         }}> Take photo </button>
  
         {/* <button onClick={ () => {

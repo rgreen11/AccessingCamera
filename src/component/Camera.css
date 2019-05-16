@@ -14,3 +14,7 @@
     width: 290px;
     height: 290px;
 }
+
+.hidden{
+    display: none;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import CameraPhoto, { FACING_MODES} from 'jslib-html5-camera-photo';
-import './Camera.css'
+import './Camera.css';
+
+
 class Camera extends React.Component {
   constructor (props, context) {
     super(props, context);
@@ -46,6 +48,7 @@ class Camera extends React.Component {
  
     let dataUri = this.cameraPhoto.getDataUri(config);
     this.setState({ dataUri });
+
   }
  
   stopCamera () {
@@ -61,15 +64,15 @@ class Camera extends React.Component {
   render () {
     const video = <video ref={this.videoRef} autoPlay="true"/>;
     const takePhoto = <img alt="imgCamera" src={this.state.dataUri}/>;
-    console.log(this.dataUri)
+    console.log(this.state.dataUri)
 
     return (
       <div>
     <div className='imageHolder' >
         <div className='filledwithimage'>
-        <video ref={this.videoRef} autoPlay="true"/>
-        <img alt="imgCamera" src={this.state.dataUri}/>
-           
+       {
+           !takePhoto ? video : takePhoto
+       }
         </div>
 
         
@@ -94,6 +97,7 @@ class Camera extends React.Component {
  
         <button onClick={ () => {
           this.takePhoto();
+          
         }}> Take photo </button>
  
         <button onClick={ () => {

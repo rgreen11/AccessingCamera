@@ -47,11 +47,6 @@ class Camera extends React.Component {
     };
  
     let dataUri = this.cameraPhoto.getDataUri(config);
-    this.setState({ dataUri });
-
-  }
- 
-  stopCamera () {
     this.cameraPhoto.stopCamera()
       .then(() => {
         console.log('Camera stoped!');
@@ -59,11 +54,24 @@ class Camera extends React.Component {
       .catch((error) => {
         console.log('No camera to stop!:', error);
       });
+    this.setState({ dataUri });
+    
+
   }
  
+  // stopCamera () {
+  //   this.cameraPhoto.stopCamera()
+  //     .then(() => {
+  //       console.log('Camera stoped!');
+  //     })
+  //     .catch((error) => {
+  //       console.log('No camera to stop!:', error);
+  //     });
+  // }
+ 
   render () {
-    const video = <video ref={this.videoRef} autoPlay="true"/>;
-    const takePhoto = <img alt="imgCamera" src={this.state.dataUri}/>;
+    // const video = <video ref={this.videoRef} autoPlay="true"/>;
+    // const takePhoto = <img alt="imgCamera" src={this.state.dataUri}/>;
     console.log(this.state.dataUri)
 
     return (
@@ -90,9 +98,9 @@ class Camera extends React.Component {
         }}> Selfie </button>
  
         <button onClick={ () => {
-          this.stopCamera();
-          this.takePhoto();
           
+          this.takePhoto();
+          // this.stopCamera();
         }}> Take photo </button>
  
         {/* <button onClick={ () => {

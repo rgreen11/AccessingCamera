@@ -1,1 +1,1 @@
-#Using jslib-htmls-camera-photo#
+#Using jslib-htmls-camera-photo

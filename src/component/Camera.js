@@ -67,7 +67,9 @@ class Camera extends React.Component {
       <div>
     <div className='imageHolder' >
         <div className='filledwithimage'>
+        <video ref={this.videoRef} autoPlay="true"/>
             {
+                
                 !video ? takePhoto : video
             }
         </div>

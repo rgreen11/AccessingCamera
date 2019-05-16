@@ -70,9 +70,8 @@ class Camera extends React.Component {
       <div>
     <div className='imageHolder' >
         <div className='filledwithimage'>
-       {
-           !takePhoto ? video : takePhoto
-       }
+            <video ref={this.videoRef} autoPlay="true"/>
+            <img src={this.state.dataUri}/>
         </div>
 
         
@@ -97,12 +96,12 @@ class Camera extends React.Component {
  
         <button onClick={ () => {
           this.takePhoto();
-          
+          this.stopCamera();
         }}> Take photo </button>
  
-        <button onClick={ () => {
+        {/* <button onClick={ () => {
           this.stopCamera();
-        }}> Stop </button>
+        }}> Stop </button> */}
  
        
        

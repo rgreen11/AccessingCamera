@@ -68,14 +68,7 @@ class Camera extends React.Component {
 
     return (
       <div>
-    <div className='imageHolder' >
-        <div className='filledwithimage'>
-            <video ref={this.videoRef} autoPlay="true"/>
-            <img src={this.state.dataUri}/>
-        </div>
-
-        
-    </div>
+ 
         
         
         <button onClick={ () => {
@@ -105,7 +98,12 @@ class Camera extends React.Component {
           this.stopCamera();
         }}> Stop </button> */}
  
-       
+ <div className='imageHolder' >
+        <div className='filledwithimage'>
+            <video ref={this.videoRef} autoPlay="true"/>
+            <img src={this.state.dataUri}/>
+        </div>
+    </div>
        
       </div>
     );

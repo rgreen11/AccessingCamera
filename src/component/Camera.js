@@ -68,10 +68,8 @@ class Camera extends React.Component {
     <div className='imageHolder' >
         <div className='filledwithimage'>
         <video ref={this.videoRef} autoPlay="true"/>
-            {
-                
-                !video ? takePhoto : video
-            }
+        <img alt="imgCamera" src={this.state.dataUri}/>
+           
         </div>
 
         

@@ -77,8 +77,7 @@ class Camera extends React.Component {
     return (
       <div>
  
-        
-        
+        <div>
         <button onClick={ () => {
           let facingMode = FACING_MODES.ENVIRONMENT;
           let idealResolution = { width: 640, height: 480 };
@@ -107,6 +106,9 @@ class Camera extends React.Component {
           this.stopCamera();
         }}> Stop </button> */}
         
+        </div>
+        
+     
         <div className='imageHolder' >
                 <div className='filledwithimage'>
                     <video ref={this.videoRef} autoPlay="true"/>

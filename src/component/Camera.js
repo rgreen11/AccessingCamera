@@ -47,19 +47,20 @@ class Camera extends React.Component {
     };
  
     let dataUri = this.cameraPhoto.getDataUri(config);
-    this.setState({ dataUri });
-  }
- 
-  stopCamera () {
-    this.cameraPhoto.stopCamera()
+
+    this.setState({ dataUri },()=>{
+      this.cameraPhoto.stopCamera()
       .then(() => {
         console.log('Camera stoped!');
       })
       .catch((error) => {
         console.log('No camera to stop!:', error);
       });
+    });
+
   }
  
+  
   render () {
     return (
       <div>

@@ -3,6 +3,8 @@ import CameraPhoto, { FACING_MODES} from 'jslib-html5-camera-photo';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Camera.css';
 
+
+
  
 class Camera extends React.Component {
   constructor (props, context) {
@@ -47,20 +49,19 @@ class Camera extends React.Component {
     };
  
     let dataUri = this.cameraPhoto.getDataUri(config);
-
-    this.setState({ dataUri },()=>{
-      this.cameraPhoto.stopCamera()
+    this.setState({ dataUri });
+  }
+ 
+  stopCamera () {
+    this.cameraPhoto.stopCamera()
       .then(() => {
         console.log('Camera stoped!');
       })
       .catch((error) => {
         console.log('No camera to stop!:', error);
       });
-    });
-
   }
  
-  
   render () {
     return (
       <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Camera from './component/Camera'
+import Camera from './component/Camera';
 
 
 class App extends React.Component {

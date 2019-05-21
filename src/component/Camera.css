@@ -1,12 +1,19 @@
-.imageHolder{
+.container{
     display: flex;
+    flex-flow: row wrap;
+}
+
+
+.imageHolder{
+    /* display: flex; */
     background-color: aqua;
     width: 300px;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     height: 300px;
-    margin-top: 400px;
 }
+
+
 .filledwithimage{
     border: 1px solid black;
     display: flex;
@@ -14,8 +21,22 @@
     align-items: center;
     width: 290px;
     height: 290px;
+
 }
 
 .hidden{
+
     display: none;
+}
+
+.buttons{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.editButtons{
+    margin-top: 3%;
+    color: #FFF738;
+    background-color: #40CCCF;
 }
